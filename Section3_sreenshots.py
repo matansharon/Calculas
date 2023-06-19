@@ -17,14 +17,19 @@ st.title("Image Viewer")
 # num_images = len(image_files)
 # num_rows = 4
 # num_cols = int(np.ceil(num_images / num_rows))
-
+cols=st.columns(4)
+col=0
 for i in range(len(image_files)):
     #make this as a 4iun a row grid
     image = Image.open(image_files[i])
-    st.header(i)
+    cols[col].header(i)
+    
     #place the numerators in the grid
-    st.image(image, caption=i, use_column_width=True)
+    cols[col].image(image, caption=i, use_column_width=True)
     #write the number i below the image
+    col+=1
+    if col>3:
+        col=0
     
     
 
