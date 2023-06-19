@@ -11,13 +11,13 @@ image_files = [os.path.join(path, f) for f in os.listdir(path) if f.endswith(".j
 print(image_files)
 
 # # Display the images in a 4x4 grid
-st.set_page_config(page_title="Image Viewer")
-st.title("Image Viewer")
+st.set_page_config(page_title="Calculas Section 3")
+st.title("Calculas Section 3")
 
 # num_images = len(image_files)
 # num_rows = 4
 # num_cols = int(np.ceil(num_images / num_rows))
-cols=st.columns(4)
+cols=st.columns(3)
 col=0
 for i in range(len(image_files)):
     #make this as a 4iun a row grid
@@ -28,7 +28,7 @@ for i in range(len(image_files)):
     cols[col].image(image, caption=i, use_column_width=True)
     #write the number i below the image
     col+=1
-    if col>3:
+    if col>2:
         col=0
     
     
